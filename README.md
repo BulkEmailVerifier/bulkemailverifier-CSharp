@@ -2,18 +2,18 @@
 ```markdown
 # Bounceless-CSharp
 
-This is a C# client for the [Bounceless.io](https://bounceless.io/) API.
+This is a C# client for the [client.bulkemailverifier.com](https://client.bulkemailverifier.com/) API.
 
 ## Requirements
 * .NET Core 3.1 or later
-* An API key from Bounceless.io
+* An API key from client.bulkemailverifier.com
 
 ## Setup
 
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/bounceless/Bounceless-CSharp.git
+git clone https://github.com/BulkEmailVerifier/bulkemailverifier-CSharp.git
 ```
 
 Open the solution in your preferred IDE (like Visual Studio or JetBrains Rider). 

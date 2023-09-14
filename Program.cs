@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Net.Http;
 
-namespace Bounceless
+namespace bulkemailverifier
 {
     class Program
     {
@@ -17,14 +17,14 @@ namespace Bounceless
 
         static void VerifySingleEmail(string key, string email)
         {
-            string url = $"https://apps.bounceless.io/api/singlemaildetails?secret={key}&email={email}";
+            string url = $"client.bulkemailverifier.com/api/singlemaildetails?secret={key}&email={email}";
             var response = client.GetAsync(url).Result;
             Console.WriteLine(response.Content.ReadAsStringAsync().Result);
         }
 
         static void UploadFile(string key, string filePath)
         {
-            string url = $"https://apps.bounceless.io/api/verifyApiFile?secret={key}&filename={Path.GetFileName(filePath)}";
+            string url = $"client.bulkemailverifier.com/api/verifyApiFile?secret={key}&filename={Path.GetFileName(filePath)}";
             using var content = new MultipartFormDataContent();
             using var fileStream = File.OpenRead(filePath);
             content.Add(new StreamContent(fileStream), "file", Path.GetFileName(filePath));
@@ -34,7 +34,7 @@ namespace Bounceless
 
         static void GetFileInfo(string key, string fileId)
         {
-            string url = $"https://apps.bounceless.io/api/getApiFileInfo?secret={key}&id={fileId}";
+            string url = $"client.bulkemailverifier.com/api/getApiFileInfo?secret={key}&id={fileId}";
             var response = client.GetAsync(url).Result;
             Console.WriteLine(response.Content.ReadAsStringAsync().Result);
         }
